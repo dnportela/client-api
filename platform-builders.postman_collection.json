@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "0375460f-eb7a-4e03-93e1-bb090501f0da",
+		"name": "platform-builders",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "[GET] consumers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/consumers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"consumers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[GET] consumer by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/consumers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"consumers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[GET] consumer by params",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"documentNumber\": \"123456\",\r\n    \"mobilePhoneNumber\": \"\",\r\n    \"email\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/consumers/by-params",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"consumers",
+						"by-params"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[POST] create consumer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Consumer Test\",\r\n    \"documentNumber\": \"123456\",\r\n    \"birthDate\": \"2015-07-03\",\r\n    \"contact\":{\r\n        \"mobilePhoneNumber\": \"86 98834-9718\",\r\n        \"residencePhoneNumber\": \"86 3011-2356\",\r\n        \"email\": \"consumer@platformbuilders.com\"\r\n    },\r\n    \"address\":{\r\n        \"street\": \"Av. Frei Serafim\",\r\n        \"number\": \"1210\",\r\n        \"city\": \"Teresina\",\r\n        \"state\": \"Piauí\",\r\n        \"postalCode\": \"64000-120\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/consumers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"consumers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[PUT] update consumer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Consumer Test Updated\",\r\n    \"documentNumber\": \"1234567\",\r\n    \"birthDate\": \"2020-07-03\",\r\n    \"contact\":{\r\n        \"mobilePhoneNumber\": \"86 99999-9718\",\r\n        \"residencePhoneNumber\": \"86 3000-2356\",\r\n        \"email\": \"comsumer-updated@platformbuilders.com\"\r\n    },\r\n    \"address\":{\r\n        \"street\": \"Av. Frei Serafim Up\",\r\n        \"number\": \"1212\",\r\n        \"city\": \"São Paulo\",\r\n        \"state\": \"São Paulo\",\r\n        \"postalCode\": \"11000-120\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/consumers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"consumers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[PATCH] update contact",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mobilePhoneNumber\": \"86 99999-9999\",\r\n    \"residencePhoneNumber\": \"86 3000-0000\",\r\n    \"email\": \"comsumerWithNewContact@platformbuilders.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/consumers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"consumers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
